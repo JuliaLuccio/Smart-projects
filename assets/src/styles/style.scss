@@ -1,0 +1,229 @@
+@import './components/reset';
+@import './components/variables';
+@import './components/mixin';
+
+*::selection {
+   color: $yellow-color;
+	background: $black-color;
+}
+
+body {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 1.48;
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.first-screen {
+  background: url('./src/images/first-screen.png') no-repeat top center;
+  padding-top: 20px;
+
+   &__line {
+      display: grid;
+      grid-template-rows: 1fr minmax(230px,70%) 1fr;
+      align-items: center;
+    }
+
+	&__nav {
+      @include flexJustify ($space);
+	}
+
+	// &__nav-logo-link {
+	// }
+
+	// &__logo-img {
+	// }
+
+	&__nav-btn-menu {
+      background-color: transparent;
+      border: none;
+
+      &:hover {
+        cursor: pointer;
+      }
+	}
+
+	&__nav-btn-img {
+      display: inline-block;
+      background: url('./src/images/icons/menu-burger.png') no-repeat;
+      width: 50px;
+      height: 50px;
+	}
+
+	&__content {
+      max-width: 735px;
+      margin: 0 auto;
+      text-align: center;
+	}
+
+	&__content-title {
+      @include textSizeUp (64px);
+      letter-spacing: 2px;
+      color: $white-color;
+      margin-bottom: 30px;
+	}
+
+	&__content-subtitle {
+      color: $white-color;
+      font-weight: 400;
+      text-transform: uppercase;
+	}
+
+	&__achievement {
+      @include flexJustify (space-evenly);
+      align-items: center;
+      background-color: $ligthgray;
+      text-align: center;
+      min-height: 300px;
+	}
+
+	&__achievement-item {
+      display: flex;
+      flex-direction: column;
+	}
+
+	&__achivement-item-amount {
+      font-size: 72px;
+      color: $accent-color;
+	}
+
+	&__achievement-item-year {
+      font-size: 36px;
+      color: $black-color;
+	}
+
+	&__achievement-item-trade {
+      color: $gray-color;
+	}
+}
+
+.title-lower {
+   text-transform: lowercase; /*so happened i don`t like russia*/
+}
+
+.project {
+
+   padding-top: 100px;
+
+	&__subtitle {
+      color: $dark-color;
+      margin-bottom: 60px;
+	}
+
+   &__list {
+      @include flexJustify ($space);
+      align-items: flex-start;
+      margin-bottom: 110px;
+   }
+
+	&__list-item {
+      flex-basis: 350px;
+	}
+
+   // &__list-item-picture {
+   // }
+
+	&__list-item-decor {
+      width: 55px;
+      height: 6px;
+      border-width: 0;
+      background-color: $accent-color;
+      margin: 45px 0 15px;
+	}
+
+	&__list-item-name {
+      font-size: 24px;
+      color: $dark-color;
+      margin-bottom: 20px;
+	}
+
+	&__list-item-desc {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: 400;
+      font-size: 16px;
+      line-height: 1.38;
+      color: $gray-color;
+	}
+}
+
+.subtitle {
+   @include textSizeUp (36px);
+   text-align: center;
+}
+
+.request {
+   background-color: $accent-color;
+   padding: 30px 0 45px;
+
+	// &__declaration {
+	// }
+
+   &__line {
+      @include flexJustify ($space);
+      align-items: center;
+   }
+
+	&__title {
+      @include textRequest (48px);
+	}
+
+	&__slogan {
+      @include textRequest (24px);
+	}
+
+	&__btn {
+      @include textSizeUp (14px);
+      min-width: 175px;
+      min-height: 49px;
+      border: none;
+      font-weight: 500;
+      background: url('./src/images/icons/mail.png') no-repeat left 25px center $white-color;
+      font-family: inherit;
+      letter-spacing: 2px;
+      padding: 0 15px 0 45px;
+         
+      &:hover {
+        cursor: pointer;
+      }
+	}
+}
+
+.services {
+
+   padding-top: 150px;
+
+	&__subtitle {
+      margin-bottom: 66px;
+	}
+
+	&__list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2,minmax(250px,1fr));
+      gap: 30px;
+	}
+
+	&__list-item {
+      background-color: $ligthgray;
+      display: grid;
+      align-content: center;
+      justify-items: center;
+      row-gap: 25px;
+	}
+
+	// &__list-item-icon {
+	// }
+
+	&__list-item-service-name {
+      @include textSizeUp (21px);
+      text-align: center;
+      max-width: 180px;
+	}
+}
+

@@ -1,0 +1,17 @@
+@mixin textSizeUp ($fs) {
+    text-transform: uppercase;
+    font-size: $fs;
+}
+
+@mixin flexJustify ($space) {
+    display: flex;
+    justify-content: $space;
+}
+
+@mixin textRequest ($fs) {
+    text-transform: uppercase;
+    font-size: $fs;
+    font-weight: 700;
+    color: $white-color;
+    letter-spacing: 2px;
+}
