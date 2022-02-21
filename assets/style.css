@@ -49,10 +49,12 @@ input {
 }
 
 body {
-  font-family: 'Oswald', sans-serif;
+  font-family: "Oswald", sans-serif;
   font-weight: 500;
   font-size: 18px;
   line-height: 1.48;
+  background: url("./src/images/first-screen.png") no-repeat top center;
+  padding-top: 20px;
 }
 
 .container {
@@ -61,36 +63,32 @@ body {
   padding: 0 15px;
 }
 
-.first-screen {
-  background: url("./src/images/first-screen.png") no-repeat top center;
-  padding-top: 20px;
-}
-
-.first-screen__line {
-  display: grid;
-  grid-template-rows: 1fr minmax(230px, 70%) 1fr;
-  align-items: center;
-}
-
-.first-screen__nav {
+.header__line {
   display: flex;
   justify-content: space-between;
 }
 
-.first-screen__nav-btn-menu {
+.header__btn-menu {
   background-color: transparent;
   border: none;
 }
 
-.first-screen__nav-btn-menu:hover {
+.header__btn-menu:hover {
   cursor: pointer;
 }
 
-.first-screen__nav-btn-img {
+.header__btn-img {
   display: inline-block;
   background: url("./src/images/icons/menu-burger.png") no-repeat;
   width: 50px;
   height: 50px;
+}
+
+.first-screen__line {
+  display: grid;
+  grid-template-rows: minmax(460px, max-content) minmax(300px, max-content);
+  align-items: center;
+  row-gap: 50px;
 }
 
 .first-screen__content {
@@ -114,31 +112,33 @@ body {
 }
 
 .first-screen__achievement {
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  row-gap: 10px;
+  column-gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: minmax(86px, 1fr) minmax(43px, auto) minmax(22px, auto);
   align-items: center;
-  background-color: #F7F7F7;
+  justify-items: center;
+  padding: 57px 130px;
   text-align: center;
-  min-height: 300px;
-}
-
-.first-screen__achievement-item {
-  display: flex;
-  flex-direction: column;
+  background-color: #F7F7F7;
 }
 
 .first-screen__achivement-item-amount {
   font-size: 72px;
   color: #F7654A;
+  order: 1;
 }
 
 .first-screen__achievement-item-year {
   font-size: 36px;
   color: #000;
+  order: 2;
 }
 
 .first-screen__achievement-item-trade {
   color: #999;
+  order: 3;
 }
 
 .title-lower {
@@ -159,7 +159,8 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  margin-bottom: 110px;
+  margin-bottom: 65px;
+  flex-wrap: wrap;
 }
 
 .project__list-item {
@@ -181,11 +182,12 @@ body {
 }
 
 .project__list-item-desc {
-  font-family: 'Open Sans', sans-serif;
+  font-family: "Open Sans", sans-serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.38;
   color: #999;
+  padding-bottom: 45px;
 }
 
 .subtitle {
@@ -266,4 +268,10 @@ body {
   font-size: 21px;
   text-align: center;
   max-width: 180px;
+}
+
+@media (max-width: 1080px) {
+  .project__list {
+    justify-content: space-evenly;
+  }
 }
